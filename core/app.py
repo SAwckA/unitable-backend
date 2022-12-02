@@ -24,3 +24,4 @@ async def health() -> str:
 
 
 import auth.routes  # type: ignore # noqa
+import users.routes # type: ignore # noqa
