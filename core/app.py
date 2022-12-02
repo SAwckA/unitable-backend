@@ -18,16 +18,9 @@ async def shutdown():
 
 
 @app.get('/')
-async def health():
-    conn: asyncpg.Connection
-    async with db.pool.acquire() as conn:
-        a: list[asyncpg.Record]
-        a = await conn.fetch("""select id, username from public.user;""")
-        for x in a:
-            print(x)
-        await conn.close()
-
-    return dict(a[0])
+async def health() -> str:
+    """ Health check """
+    return "OK"
 
 
 import auth.routes  # type: ignore # noqa
