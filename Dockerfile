@@ -14,7 +14,7 @@ COPY core core
 COPY auth auth
 COPY utils utils
 COPY settings settings
-
+COPY journal journal
 #RUN mkdir ~/.postgresql
 #COPY root.crt /root/.postgresql/root.crt
 
